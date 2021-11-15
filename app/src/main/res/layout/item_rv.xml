@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:setImage="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="currencyItem"
+            type="com.example.provalyutakursi.models.Currency" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        android:layout_marginHorizontal="15dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/flag_img"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                setImage:url="@{currencyItem.photoUrl}"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/currency_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@{currencyItem.code.toString()}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="@id/flag_img"
+                app:layout_constraintLeft_toRightOf="@id/flag_img"
+                app:layout_constraintTop_toTopOf="@id/flag_img" />
+
+            <TextView
+                android:id="@+id/buy_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{currencyItem.nbu_buy_price.toString()}"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/sell_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{currencyItem.nbu_cell_price.toString()}"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/buy_price_tv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <ImageView
+                android:id="@+id/calc_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/calculator1"
+                android:padding="5dp"
+                android:background="@drawable/calc_shape"
+                app:layout_constraintTop_toTopOf="@+id/sotish_tv"
+                app:layout_constraintBottom_toBottomOf="@id/sell_price_tv"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sotib olish"
+                android:textStyle="normal"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:alpha="0.5"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@id/buy_price_tv"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/sotish_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sotish"
+                android:textStyle="normal"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:alpha="0.5"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@id/sell_price_tv"
+                app:layout_constraintLeft_toLeftOf="@id/sell_price_tv" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

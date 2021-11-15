@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/main_menu"
+        android:title="Main menu"
+        android:icon="@drawable/home_menu_selector"
+        android:enabled="true"
+        />
+     <item
+        android:id="@+id/all_currency"
+        android:title="All currency"
+        android:icon="@drawable/all_currency_selector"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/calculator"
+        android:title="Calculator"
+        android:icon="@drawable/calculator_selector"
+        android:enabled="true"
+        />
+
+</menu>

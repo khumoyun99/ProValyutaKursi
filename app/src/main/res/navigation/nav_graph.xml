@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.provalyutakursi.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_mainHomeFragment"
+            app:destination="@id/mainHomeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allCurrencyFragment2"
+            app:destination="@id/allCurrencyFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainHomeFragment"
+        android:name="com.example.provalyutakursi.fragments.MainHomeFragment"
+        android:label="fragment_main_home"
+        tools:layout="@layout/fragment_main_home" />
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.example.provalyutakursi.fragments.CalculatorFragment"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" />
+    <fragment
+        android:id="@+id/allCurrencyFragment2"
+        android:name="com.example.provalyutakursi.fragments.AllCurrencyFragment"
+        android:label="fragment_all_currency"
+        tools:layout="@layout/fragment_all_currency" >
+        <action
+            android:id="@+id/action_allCurrencyFragment2_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+</navigation>
